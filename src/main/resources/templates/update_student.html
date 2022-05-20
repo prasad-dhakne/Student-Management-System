@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Student</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+		 rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+		 crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-3">
+		<div class="row mt-3">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center mt-3">Update Student</h1>
+				<div class="card-body mt-3">
+					<form th:action="@{/students/{id}(id=${student.id})}" th:object="${student}" method="POST">
+						<div class="form-group mt-3">
+							<label>Student First Name</label>
+							<input
+							type="text"
+							name="firstName"
+							th:field="*{firstName}"
+							class="form-control mt-2"
+							placeholder="Enter Student First Name"
+							required
+							/>
+						</div>
+						<div class="form-group mt-3">
+							<label>Student Last Name</label>
+							<input
+							type="text"
+							name="lastName"
+							th:field="*{lastName}"
+							class="form-control mt-2"
+							placeholder="Enter Student Last Name"
+							required
+							/>
+						</div>
+						<div class="form-group mt-3">
+							<label>Student Email</label>
+							<input
+							type="email"
+							name="email"
+							th:field="*{email}"
+							class="form-control mt-2"
+							placeholder="Enter Student Email Id"
+							required
+							/>
+						</div>
+						<div class="box-footer mt-3 text-center">
+							<button type="submit" class="btn btn-primary ">
+							Update</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
